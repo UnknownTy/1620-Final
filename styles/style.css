@@ -1,18 +1,16 @@
 body{
     font-family: 'Montserrat', sans-serif;
-    max-width: 640px;
+    max-width: 80vw;
     margin: auto;
+    text-align: center;
 }
 div img {
     width: 20%;
 }
-header h1, header p {
-    text-align: center;
-}
 ul{
     list-style-type: none;
     padding: 0px;
-    margin: 1em;;
+    padding-bottom: 1vh;
 }
 img{
     float: left
@@ -23,12 +21,21 @@ img{
     display: block;
 }
 form{
-    display: grid;
-    grid-template-columns: auto;
-    justify-content: center;
+    padding: 5vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between;
 }
-@media screen and (max-width: 640px){
+@media screen and (min-width: 640px){
     body{
-        max-width: 80vw;
+        max-width: 640px;
+    }
+    p{
+        text-align: left;
+    }
+    form{
+        flex-flow: row wrap;
+        justify-content: space-around;
     }
 }
