@@ -1,17 +1,18 @@
 body{
     font-family: 'Montserrat', sans-serif;
-    width: 640px;
+    max-width: 640px;
+    margin: auto;
 }
 div img {
     width: 20%;
 }
 header h1, header p {
-    margin: auto;
+    text-align: center;
 }
 ul{
     list-style-type: none;
     padding: 0px;
-    margin: 1em;
+    margin: 1em;;
 }
 img{
     float: left
@@ -21,8 +22,13 @@ img{
     clear: both;
     display: block;
 }
+form{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
 @media screen and (max-width: 640px){
     body{
-        width: 80vw;
+        max-width: 80vw;
     }
 }
