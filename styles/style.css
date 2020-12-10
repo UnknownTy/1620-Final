@@ -4,18 +4,22 @@ body{
     margin: auto;
     text-align: center;
 }
+
 div img {
     width: 20%;
     float: left
 }
+
 img.displayed-img{
     padding-top: 1%;
 }
+
 #thumb-bar:after{
     content: "";
     clear: both;
     display: block;
 }
+
 form{
     padding: 5vh;
     display: flex;
@@ -23,6 +27,7 @@ form{
     align-items: center;
     justify-content: space-between;
 }
+
 @media screen and (min-width: 640px){
     body{
         max-width: 640px;

@@ -1,15 +1,16 @@
 let thumbDiv = document.getElementById('thumb-bar')
-
+let formButton = document.getElementsByTagName('button')[0]
 
 function hideForm(){
-    // This function toggles the form elements.
+    // This function hides the form elements.
     let formChildren = document.getElementById('effectForm').children
     for(var i = 0; i < formChildren.length; i++){
         formChildren[i].toggleAttribute('hidden', true)
     }
 };
+
 function revealForm(){
-    // This function toggles the form elements.
+    // This function reveals the form elements.
     let formChildren = document.getElementById('effectForm').children
     for(var i = 0; i < formChildren.length; i++){
         formChildren[i].toggleAttribute('hidden', false)
@@ -17,7 +18,6 @@ function revealForm(){
 };
 
 function addImgs(){
-    
     for(var i = 1; i < 6; i++){
         var img = document.createElement('img')
         img.setAttribute("src", `images/pic${i}.jpg`)
@@ -33,11 +33,12 @@ thumbDiv.addEventListener('mouseover', function(e){
     display.setAttribute('src', img)
 })
 
-let formButton = document.getElementsByTagName('button')[0]
 formButton.onclick = function(){
     var usrInput = document.getElementById('effect').value
     document.getElementById('effect').value = ""
+
     var display = document.getElementsByClassName('displayed-img')[0]
+
     if(usrInput.toLowerCase() === "blur"){
         var img = display.attributes['src'].nodeValue
         var imgBlur = img.slice(0, 11) + 'B' + img.slice(11)
@@ -47,5 +48,9 @@ formButton.onclick = function(){
     }
     return false //Must return false to ensure page does not refresh.
 }
-addImgs()
-hideForm();
+
+document.addEventListener("DOMContentLoaded", function(){
+    addImgs()
+    hideForm();
+})
+
